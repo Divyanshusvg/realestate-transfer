@@ -1,0 +1,141 @@
+<!-- <!--*******************
+    Preloader start
+********************-->
+<body>
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+        <%- include('../../partials/header') %>
+        <%- include('../../partials/sideBar') %>
+        <div class="content-body">
+            <!-- row -->
+            <div class="container-fluid">
+                <div class="card shadow">
+                    <div class="card-header border-0 d-flex justify-content-between mb-4 align-items-center">
+                        <h3 class="mb-0">Subscription</h3>
+                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addModal">
+                            <i class="fa fa-plus"></i> Add Subscription
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="dataTable table align-items-center table-flush">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Start Date </th>
+                                    <th scope="col">End Date</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                        <!-- pagination -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">Add Sub Category Type</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addForm">
+                        <div class="form-group">
+                            <label for="addPropertyName">Name</label>
+                            <input type="text" class="form-control" id="addPropertyName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addPropertyCategory">Category</label>
+                            <select class="form-control" id="addPropertyCategory" name="category" required>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="addPropertyStatus">Status</label>
+                            <select class="form-control" id="addPropertyStatus" name="status" required>
+                                <option value="1">Active</option>
+                                <option value="0">Inactive</option>
+                            </select>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveAddChanges">Add Sub Category Type</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Sub Category Type</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <div class="form-group">
+                                <label for="editPropertyName">Name</label>
+                                <input type="text" class="form-control" id="editPropertyName" name="name" required>
+                            </div>
+                            <div class="form-group">
+                            <label for="editPropertyCategory">Category</label>
+                            <select class="form-control" id="editPropertyCategory" name="category" required>
+                            </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="editPropertyStatus">Status</label>
+                                <select class="form-control" id="editPropertyStatus" name="status" required>
+                                    <option value="1">Active</option>
+                                    <option value="0">Inactive</option>
+                                </select>
+                            </div>
+                            <input type="hidden" id="editPropertyId" name="id">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveEditChanges">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../../partials/footer') %>
+    </div>  
+    
+    <script>
+    </script>
+
+</body>
+
+
+ -->

@@ -1,0 +1,132 @@
+
+<html>
+
+
+</html>
+
+<body>
+
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+        <%- include('../../partials/header') %>
+        <%- include('../../partials/sideBar') %>
+        <div class="content-body">
+            <!-- row -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Today Listing </div>
+                                    <div class="stat-digit"> <%= propertiesAddedTodayCount %></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success w-85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Top Users</div>
+                                    <div class="stat-digit"> 7</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-primary w-75" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total Users</div>
+                                    <div class="stat-digit" id="total-users-count"><%= count %></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-warning w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="stat-widget-two card-body">
+                                <div class="stat-content">
+                                    <div class="stat-text">Total Property</div>
+                                    <div class="stat-digit"> <%= PropertyAddCount %></div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger w-65" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <!-- <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Sales Overview</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-8">
+                                        <div id="morris-bar-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div> -->
+               
+                
+        
+            </div>
+        </div>
+        <%- include('../../partials/footer') %>
+    
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/dashboard')
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.count !== undefined) {
+                        // Update the Total Users card with the fetched count
+                        document.querySelector('#total-users-count').textContent = data.count;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching user count:', error);
+                });
+        });
+    </script>
+ </body>{
+    "count": 7
+}
